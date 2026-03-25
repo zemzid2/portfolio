@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alex Mercer — Full-Stack Developer & UI Designer</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body> 
+
+  <!--  -->
 
 <!-- Fixed BG layers -->
 <div class="bg-grid"></div>
@@ -22,6 +25,301 @@
 ══════════════════════════════════════════════════════════ -->
 <nav>
   <a href="#hero" class="nav-logo">MERCER</a>
+=======
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Alex Mercer</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Orbitron:wght@500;700;900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ─────────────────────────────────────────── */
+:root {
+  --g:   #05f560;
+  --g2:  #00c847;
+  --gd:  rgba(5,245,96,.12);
+  --gb:  rgba(5,245,96,.08);
+  --gl:  rgba(5,245,96,.18);
+  --blk: #070907;
+  --d1:  #0c100c;
+  --d2:  #111611;
+  --d3:  #161c16;
+  --txt: #e8f5ea;
+  --dim: rgba(232,245,234,.45);
+  --glass-bg: rgba(10,18,10,.6);
+  --glass-bd: rgba(5,245,96,.14);
+  --r: 18px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--blk);color:var(--txt);font-family:'Syne',sans-serif;overflow-x:hidden;cursor:none}
+
+/* ─── CURSOR ─────────────────────────────────────────── */
+#cur,#cur2{position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);border-radius:50%}
+#cur{width:9px;height:9px;background:var(--g);box-shadow:0 0 12px var(--g),0 0 24px var(--g);transition:width .15s,height .15s}
+#cur2{width:36px;height:36px;border:1.5px solid rgba(5,245,96,.45);transition:all .18s ease}
+
+/* ─── BG LAYERS ──────────────────────────────────────── */
+.grid-bg{position:fixed;inset:0;z-index:0;background-image:linear-gradient(rgba(5,245,96,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(5,245,96,.035) 1px,transparent 1px);background-size:52px 52px;pointer-events:none}
+.scan{position:fixed;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.06) 3px,rgba(0,0,0,.06) 4px)}
+.orb{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0}
+.orb-a{width:700px;height:700px;background:radial-gradient(circle,rgba(5,245,96,.09),transparent 70%);top:-260px;right:-180px}
+.orb-b{width:500px;height:500px;background:radial-gradient(circle,rgba(0,200,71,.07),transparent 70%);bottom:-100px;left:-150px}
+
+/* ─── NAV ────────────────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(7,9,7,.75);backdrop-filter:blur(28px) saturate(1.6);-webkit-backdrop-filter:blur(28px) saturate(1.6);border-bottom:1px solid rgba(5,245,96,.07)}
+.nav-logo{font-family:'Orbitron',monospace;font-weight:900;font-size:1.15rem;letter-spacing:3px;color:var(--g);text-decoration:none;text-shadow:0 0 18px var(--g)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-family:'DM Mono',monospace;font-size:.73rem;letter-spacing:2px;color:var(--dim);text-decoration:none;transition:color .25s;text-transform:uppercase}
+.nav-links a:hover{color:var(--g)}
+.nav-cta{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:2px;background:var(--g);color:#000;border:none;padding:10px 22px;border-radius:8px;font-weight:700;cursor:pointer;transition:box-shadow .3s,transform .2s;text-transform:uppercase}
+.nav-cta:hover{box-shadow:0 0 22px var(--g),0 0 44px rgba(5,245,96,.3);transform:translateY(-1px)}
+
+/* ─── SECTION WRAPPER ────────────────────────────────── */
+section{position:relative;z-index:5}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 5%}
+
+/* ─── GLASS ELEMENTS ──────────────────────────────────── */
+.glass{background:var(--glass-bg);backdrop-filter:blur(28px) saturate(1.5);-webkit-backdrop-filter:blur(28px) saturate(1.5);border:1px solid var(--glass-bd);border-radius:var(--r)}
+.glass-pill{display:inline-flex;align-items:center;gap:8px;background:var(--glass-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--glass-bd);border-radius:100px;padding:7px 18px;font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:2px;color:var(--g)}
+.glass-pill::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--g);box-shadow:0 0 8px var(--g);animation:blink 1.6s ease-in-out infinite;flex-shrink:0}
+
+/* ─── SEC HEADER ──────────────────────────────────────── */
+.sec-eye{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:4px;color:var(--g);text-transform:uppercase;margin-bottom:14px}
+.sec-eye::before{content:'// ';opacity:.4}
+.sec-h{font-family:'Orbitron',monospace;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:900;color:#fff;line-height:1.1}
+.sec-h .hl{color:var(--g);text-shadow:0 0 20px var(--g)}
+.sec-ghost{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(4rem,10vw,9rem);letter-spacing:-4px;color:rgba(5,245,96,.04);line-height:1;pointer-events:none;user-select:none;position:absolute;white-space:nowrap}
+
+/* ─── HERO ────────────────────────────────────────────── */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:center;padding-top:72px;overflow:hidden}
+.hero-left{padding:60px 5% 60px calc(5% + max(0px,(100vw - 1200px)/2));display:flex;flex-direction:column;gap:0}
+.hero-avail{opacity:0;animation:fadeUp .7s .1s forwards}
+.hero-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.4rem,4.5vw,4rem);line-height:1.08;margin-top:24px;opacity:0;animation:fadeUp .8s .25s forwards}
+.hero-title .name{color:var(--g);display:block;font-family:'Orbitron',monospace;font-size:clamp(1.6rem,3vw,2.6rem);font-weight:900;text-shadow:0 0 25px var(--g),0 0 60px rgba(5,245,96,.3);letter-spacing:-1px}
+.hero-title .role{color:#fff}
+.hero-title .loc{color:var(--dim);font-size:.65em;font-family:'DM Mono',monospace;letter-spacing:1px;font-weight:400;margin-top:6px;display:block}
+.hero-body{font-size:1rem;color:var(--dim);line-height:1.75;max-width:440px;margin-top:22px;opacity:0;animation:fadeUp .8s .4s forwards}
+.hero-acts{display:flex;gap:14px;margin-top:34px;opacity:0;animation:fadeUp .8s .55s forwards}
+.btn-fill{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:2px;font-weight:500;background:var(--g);color:#000;border:none;padding:14px 30px;border-radius:10px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;position:relative;overflow:hidden;text-transform:uppercase}
+.btn-fill::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:translateX(-100%);transition:transform .5s}
+.btn-fill:hover::after{transform:translateX(100%)}
+.btn-fill:hover{box-shadow:0 0 30px var(--g),0 0 60px rgba(5,245,96,.25);transform:translateY(-2px)}
+.btn-ghost{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:2px;font-weight:500;background:transparent;color:var(--g);border:1px solid rgba(5,245,96,.3);padding:14px 28px;border-radius:10px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;text-transform:uppercase}
+.btn-ghost:hover{border-color:var(--g);background:rgba(5,245,96,.06);box-shadow:0 0 20px rgba(5,245,96,.15)}
+
+/* Hero stats strip */
+.hero-stats{display:flex;gap:2px;margin-top:44px;opacity:0;animation:fadeUp .8s .7s forwards}
+.hstat{flex:1;padding:18px 0;border-top:1px solid var(--gl);position:relative}
+.hstat::after{content:'';position:absolute;top:-1px;left:0;width:0;height:1px;background:var(--g);transition:width .6s ease}
+.hstat.visible::after{width:100%}
+.hstat-n{font-family:'Orbitron',monospace;font-weight:900;font-size:1.5rem;color:var(--g);text-shadow:0 0 14px var(--g)}
+.hstat-l{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:1.5px;color:var(--dim);margin-top:4px}
+
+/* Hero right - photo area */
+.hero-right{position:relative;height:100%;display:flex;align-items:center;justify-content:center;padding:80px 5% 80px 0}
+.hero-photo-wrap{position:relative;width:min(420px,88%)}
+.hero-photo-blob{position:absolute;inset:-12%;background:radial-gradient(ellipse at 40% 40%,rgba(5,245,96,.2),rgba(5,245,96,.05) 55%,transparent 75%);border-radius:60% 40% 55% 45%/45% 55% 40% 60%;animation:morph 8s ease-in-out infinite}
+.hero-photo-card{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:.82;background:var(--d3);border:1px solid var(--gl);box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 60px rgba(5,245,96,.06)}
+.hero-photo-inner{width:100%;height:100%;display:flex;align-items:flex-end;justify-content:center;background:linear-gradient(160deg,rgba(5,245,96,.07) 0%,var(--d2) 60%);padding-bottom:0;overflow:hidden;position:relative}
+.hero-photo-inner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 20%,rgba(5,245,96,.1),transparent 60%)}
+.hero-avatar{font-size:10rem;line-height:1;margin-bottom:-10px;position:relative;z-index:1;filter:drop-shadow(0 0 30px rgba(5,245,96,.2))}
+/* Corner accents */
+.corner{position:absolute;width:28px;height:28px;z-index:2}
+.corner.tl{top:12px;left:12px;border-top:2px solid var(--g);border-left:2px solid var(--g)}
+.corner.tr{top:12px;right:12px;border-top:2px solid var(--g);border-right:2px solid var(--g)}
+.corner.bl{bottom:12px;left:12px;border-bottom:2px solid var(--g);border-left:2px solid var(--g)}
+.corner.br{bottom:12px;right:12px;border-bottom:2px solid var(--g);border-right:2px solid var(--g)}
+/* Floating cards on hero */
+.hf-card{position:absolute;padding:14px 18px;display:flex;align-items:center;gap:12px;animation:float 4s ease-in-out infinite}
+.hf-1{top:14%;right:-5%;animation-delay:0s}
+.hf-2{bottom:22%;left:-8%;animation-delay:.8s}
+.hf-3{top:52%;right:-10%;animation-delay:1.4s}
+.hf-icon{font-size:1.3rem}
+.hf-label{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:1px;color:var(--dim)}
+.hf-value{font-family:'Orbitron',monospace;font-size:.85rem;font-weight:700;color:var(--g)}
+/* Tab nav */
+.hero-tabs{display:flex;gap:8px;margin-top:36px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .85s forwards}
+.htab{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:1.5px;padding:8px 16px;border-radius:8px;border:1px solid rgba(5,245,96,.15);color:var(--dim);cursor:pointer;transition:all .25s;background:transparent;text-transform:uppercase}
+.htab.active,.htab:hover{background:rgba(5,245,96,.1);border-color:rgba(5,245,96,.4);color:var(--g)}
+.htab.active{box-shadow:0 0 14px rgba(5,245,96,.15)}
+
+/* ─── TOOLS ───────────────────────────────────────────── */
+#tools{padding:70px 5%;background:linear-gradient(180deg,transparent,rgba(5,245,96,.018) 50%,transparent)}
+.tools-inner{display:flex;align-items:center;gap:40px;padding:28px 40px;justify-content:space-between;flex-wrap:wrap}
+.tools-label{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:3px;color:var(--dim);white-space:nowrap;text-transform:uppercase}
+.tools-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.tool-chip{display:flex;align-items:center;gap:10px;padding:10px 18px;border-radius:12px;background:rgba(5,245,96,.04);border:1px solid rgba(5,245,96,.1);transition:all .3s;cursor:default}
+.tool-chip:hover{background:rgba(5,245,96,.1);border-color:rgba(5,245,96,.3);transform:translateY(-2px);box-shadow:0 8px 24px rgba(5,245,96,.08)}
+.tool-chip-ico{font-size:1.1rem}
+.tool-chip-name{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:1px;color:var(--txt)}
+
+/* ─── SERVICES ────────────────────────────────────────── */
+#services{padding:110px 5%;position:relative}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.srv-card{padding:36px 28px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s;cursor:default}
+.srv-card::before{content:'';position:absolute;inset:0;background:linear-gradient(140deg,rgba(5,245,96,.06) 0%,transparent 55%);opacity:0;transition:opacity .35s}
+.srv-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--g),transparent);opacity:0;transition:opacity .35s}
+.srv-card:hover{transform:translateY(-6px);border-color:rgba(5,245,96,.35);box-shadow:0 24px 60px rgba(5,245,96,.08),0 0 40px rgba(5,245,96,.04)}
+.srv-card:hover::before,.srv-card:hover::after{opacity:1}
+.srv-num{font-family:'Orbitron',monospace;font-size:2.8rem;font-weight:900;color:rgba(5,245,96,.07);line-height:1;margin-bottom:18px}
+.srv-icon{font-size:1.8rem;margin-bottom:16px;display:block}
+.srv-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.08rem;color:#fff;margin-bottom:10px}
+.srv-desc{font-size:.9rem;color:var(--dim);line-height:1.72}
+.srv-tags{margin-top:20px;display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.5px;color:var(--g);border:1px solid rgba(5,245,96,.18);padding:4px 10px;border-radius:6px;background:rgba(5,245,96,.03)}
+.srv-more-link{display:flex;align-items:center;gap:6px;margin-top:20px;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:1.5px;color:var(--g);text-decoration:none;transition:gap .3s;text-transform:uppercase}
+.srv-more-link:hover{gap:12px}
+
+/* ─── PORTFOLIO ───────────────────────────────────────── */
+#portfolio{padding:110px 5%;position:relative;overflow:hidden}
+.port-ghost{bottom:-10px;left:-20px}
+.port-filter{display:flex;gap:10px;margin-bottom:48px;flex-wrap:wrap}
+.pf-btn{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:2px;padding:9px 20px;border-radius:8px;border:1px solid rgba(5,245,96,.14);background:transparent;color:var(--dim);cursor:pointer;transition:all .25s;text-transform:uppercase}
+.pf-btn.active,.pf-btn:hover{background:rgba(5,245,96,.1);border-color:rgba(5,245,96,.4);color:var(--g)}
+.port-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.pcard{border-radius:20px;overflow:hidden;position:relative;transition:transform .4s,box-shadow .4s;cursor:pointer;background:var(--d3);border:1px solid rgba(5,245,96,.08)}
+.pcard:hover{transform:translateY(-5px) scale(1.01);box-shadow:0 24px 64px rgba(0,0,0,.5),0 0 40px rgba(5,245,96,.1);border-color:rgba(5,245,96,.25)}
+.pc1{grid-column:span 7;min-height:340px}
+.pc2{grid-column:span 5;min-height:340px}
+.pc3,.pc4,.pc5{grid-column:span 4;min-height:260px}
+.pcard-bg{position:absolute;inset:0;transition:transform .5s}
+.pcard:hover .pcard-bg{transform:scale(1.04)}
+.pcard-content{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:26px}
+.pcard-tag{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:2px;color:var(--g);background:rgba(5,245,96,.1);border:1px solid rgba(5,245,96,.2);border-radius:6px;padding:4px 10px;align-self:flex-start;text-transform:uppercase}
+.pcard-bottom{background:var(--glass-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--glass-bd);border-radius:14px;padding:16px 18px;transform:translateY(8px);opacity:0;transition:all .3s}
+.pcard:hover .pcard-bottom{transform:translateY(0);opacity:1}
+.pcard-title{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:#fff}
+.pcard-sub{font-family:'DM Mono',monospace;font-size:.62rem;color:var(--g);letter-spacing:1.5px;margin-top:4px}
+.pcard-mock{flex:1;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:.6rem;color:rgba(5,245,96,.3);line-height:2;text-align:center}
+
+/* ─── ABOUT ───────────────────────────────────────────── */
+#about{padding:110px 5%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative}
+.about-ghost{top:50%;transform:translateY(-50%);right:0}
+.about-img-wrap{position:relative}
+.about-photo{border-radius:24px;overflow:hidden;aspect-ratio:.9;background:var(--d3);border:1px solid var(--gl);position:relative}
+.about-photo-inner{width:100%;height:100%;display:flex;align-items:flex-end;justify-content:center;background:linear-gradient(160deg,rgba(5,245,96,.08),var(--d2));overflow:hidden;position:relative}
+.about-photo-inner::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 10%,rgba(5,245,96,.12),transparent 55%)}
+.about-avatar2{font-size:8.5rem;line-height:1;position:relative;z-index:1;margin-bottom:-8px;filter:drop-shadow(0 0 25px rgba(5,245,96,.2))}
+.about-exp-badge{position:absolute;bottom:-20px;right:-20px;padding:22px 24px;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.badge-big{font-family:'Orbitron',monospace;font-weight:900;font-size:2rem;color:var(--g);text-shadow:0 0 18px var(--g);line-height:1}
+.badge-small{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:1.5px;color:var(--dim);margin-top:4px}
+.about-right{}
+.about-body{font-size:1rem;color:var(--dim);line-height:1.8;margin-bottom:16px}
+.skills-block{margin-top:36px;display:flex;flex-direction:column;gap:14px}
+.skill-line{display:flex;flex-direction:column;gap:7px}
+.skill-meta{display:flex;justify-content:space-between}
+.skill-nm{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:1px;color:var(--txt)}
+.skill-pc{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--g)}
+.skill-track{height:2px;background:rgba(5,245,96,.08);border-radius:2px;overflow:hidden}
+.skill-bar{height:100%;background:linear-gradient(90deg,var(--g2),var(--g));box-shadow:0 0 8px var(--g);border-radius:2px;width:0;transition:width 1.4s cubic-bezier(.22,1,.36,1)}
+
+/* ─── PROCESS ─────────────────────────────────────────── */
+#process{padding:110px 5%;position:relative;overflow:hidden;background:linear-gradient(180deg,transparent,rgba(5,245,96,.015) 50%,transparent)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;border-radius:20px;overflow:hidden}
+.proc-step{padding:44px 28px;position:relative;transition:background .3s;background:var(--d2);border:1px solid rgba(5,245,96,.06)}
+.proc-step:hover{background:rgba(5,245,96,.04);border-color:rgba(5,245,96,.18)}
+.proc-n{font-family:'Orbitron',monospace;font-weight:900;font-size:2.8rem;color:rgba(5,245,96,.07);margin-bottom:18px;line-height:1}
+.proc-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--g);letter-spacing:.5px;margin-bottom:12px}
+.proc-body{font-size:.88rem;color:var(--dim);line-height:1.72}
+.proc-arrow{position:absolute;top:44px;right:24px;font-size:1.3rem;color:rgba(5,245,96,.18);transition:color .3s}
+.proc-step:hover .proc-arrow{color:var(--g)}
+
+/* ─── TESTIMONIALS ────────────────────────────────────── */
+#testimonials{padding:110px 5%;position:relative;overflow:hidden}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tcard{padding:32px 26px;position:relative;transition:transform .3s,box-shadow .3s}
+.tcard:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.3),0 0 30px rgba(5,245,96,.06)}
+.tc-stars{color:var(--g);font-size:.8rem;letter-spacing:2px;margin-bottom:14px}
+.tc-q{font-family:'Syne',sans-serif;font-size:2.5rem;color:var(--g);opacity:.25;line-height:1;margin-bottom:10px}
+.tc-text{font-size:.92rem;color:var(--dim);line-height:1.75;margin-bottom:22px;font-style:italic}
+.tc-author{display:flex;align-items:center;gap:12px}
+.tc-ava{width:42px;height:42px;border-radius:50%;border:1px solid var(--gl);display:flex;align-items:center;justify-content:center;font-size:1.2rem;background:rgba(5,245,96,.05)}
+.tc-name{font-family:'Syne',sans-serif;font-weight:700;font-size:.85rem;color:#fff}
+.tc-loc{font-family:'DM Mono',monospace;font-size:.63rem;color:var(--g);letter-spacing:1px}
+
+/* ─── CONTACT ─────────────────────────────────────────── */
+#contact{padding:110px 5% 150px;position:relative;overflow:hidden}
+.contact-shell{border-radius:28px;padding:64px;display:grid;grid-template-columns:1fr 1fr;gap:64px;position:relative;overflow:hidden}
+.contact-shell::before{content:'';position:absolute;top:-60%;left:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(5,245,96,.05),transparent 65%);pointer-events:none}
+.contact-shell::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(5,245,96,.3) 30%,rgba(5,245,96,.3) 70%,transparent)}
+.ci-eyebrow{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:3px;color:var(--g);text-transform:uppercase;margin-bottom:16px}
+.ci-headline{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);color:#fff;line-height:1.2;margin-bottom:22px}
+.ci-headline .hl{color:var(--g)}
+.ci-body{font-size:.95rem;color:var(--dim);line-height:1.8;margin-bottom:36px}
+.ci-links{display:flex;flex-direction:column;gap:14px}
+.ci-link{display:flex;align-items:center;gap:14px;text-decoration:none;transition:transform .25s}
+.ci-link:hover{transform:translateX(6px)}
+.ci-link-ico{width:38px;height:38px;border-radius:10px;background:rgba(5,245,96,.05);border:1px solid rgba(5,245,96,.14);display:flex;align-items:center;justify-content:center;font-size:.95rem;transition:all .25s;flex-shrink:0}
+.ci-link:hover .ci-link-ico{background:rgba(5,245,96,.12);border-color:rgba(5,245,96,.4)}
+.ci-link-text{font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.5px;color:var(--dim);transition:color .25s}
+.ci-link:hover .ci-link-text{color:var(--g)}
+/* Form */
+.cf{display:flex;flex-direction:column;gap:18px}
+.cf-label{font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:2px;color:var(--g);text-transform:uppercase;display:block;margin-bottom:7px}
+.cf-input,.cf-textarea{width:100%;background:rgba(0,0,0,.35);border:1px solid rgba(5,245,96,.12);border-radius:10px;padding:13px 16px;color:var(--txt);font-family:'Syne',sans-serif;font-size:.95rem;outline:none;transition:border-color .25s,box-shadow .25s;resize:none}
+.cf-input:focus,.cf-textarea:focus{border-color:rgba(5,245,96,.45);box-shadow:0 0 0 3px rgba(5,245,96,.05)}
+.cf-input::placeholder,.cf-textarea::placeholder{color:rgba(232,245,234,.18)}
+.cf-textarea{min-height:110px}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cf-submit{width:100%;background:var(--g);color:#000;border:none;border-radius:10px;padding:15px;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:2px;font-weight:700;cursor:pointer;transition:all .3s;text-transform:uppercase;margin-top:4px}
+.cf-submit:hover{box-shadow:0 0 28px var(--g),0 0 60px rgba(5,245,96,.2);transform:translateY(-2px)}
+
+/* ─── FOOTER ──────────────────────────────────────────── */
+footer{padding:26px 5%;border-top:1px solid rgba(5,245,96,.07);display:flex;align-items:center;justify-content:space-between;position:relative;z-index:5;flex-wrap:wrap;gap:14px}
+.f-logo{font-family:'Orbitron',monospace;font-weight:900;font-size:.95rem;color:var(--g);letter-spacing:3px}
+.f-copy{font-family:'DM Mono',monospace;font-size:.63rem;color:var(--dim);letter-spacing:1px}
+.f-links{display:flex;gap:24px}
+.f-links a{font-family:'DM Mono',monospace;font-size:.63rem;color:var(--dim);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color .25s}
+.f-links a:hover{color:var(--g)}
+
+/* ─── REVEAL ──────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.reveal-l{opacity:0;transform:translateX(-36px);transition:opacity .7s ease,transform .7s ease}
+.reveal-l.in{opacity:1;transform:none}
+.reveal-r{opacity:0;transform:translateX(36px);transition:opacity .7s ease,transform .7s ease}
+.reveal-r.in{opacity:1;transform:none}
+
+/* ─── KEYFRAMES ───────────────────────────────────────── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes morph{0%,100%{border-radius:60% 40% 55% 45%/45% 55% 40% 60%}33%{border-radius:40% 60% 45% 55%/55% 45% 60% 40%}66%{border-radius:55% 45% 60% 40%/40% 60% 45% 55%}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ─── RESPONSIVE ──────────────────────────────────────── */
+@media(max-width:960px){
+  #hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  #about{grid-template-columns:1fr;gap:44px}
+  .about-ghost{display:none}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .contact-shell{grid-template-columns:1fr;padding:40px 28px}
+  .nav-links{display:none}
+  .pc1,.pc2,.pc3,.pc4,.pc5{grid-column:span 12;min-height:220px}
+}
+@media(max-width:600px){
+  .services-grid,.process-grid{grid-template-columns:1fr}
+  .cf-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- BG -->
+<div class="grid-bg"></div>
+<div class="scan"></div>
+<div class="orb orb-a"></div>
+<div class="orb orb-b"></div>
+<div id="cur"></div>
+<div id="cur2"></div>
+
+<!-- ═══ NAV ═══════════════════════════════════════════════ -->
+<nav>
+  <a href="#" class="nav-logo">MERCER</a>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
@@ -33,6 +331,7 @@
   <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
 </nav>
 
+<<<<<<< HEAD
 
 <!-- ══════════════════════════════════════════════════════════
      HERO
@@ -62,11 +361,29 @@
 
     <p class="hero-body">I build premium digital products that turn visitors into customers. Pixel-perfect UIs, rock-solid backends — delivered fast and built to last.</p>
 
+=======
+<!-- ═══ HERO ═══════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-avail">
+      <span class="glass-pill">AVAILABLE FOR PROJECTS</span>
+    </div>
+    <h1 class="hero-title">
+      <span style="font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:3px;color:var(--dim);font-weight:300">Hello, I'm</span>
+      <span class="name">Alex Mercer,</span>
+      <span class="role">Full-Stack Developer<br>&amp; UI Designer</span>
+      <span class="loc">📍 Based in New York, USA</span>
+    </h1>
+    <p class="hero-body">I build premium digital products that convert visitors into customers. From pixel-perfect UIs to rock-solid backends — delivered fast, built to last.</p>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
     <div class="hero-acts">
       <a href="#portfolio" class="btn-fill">View My Work →</a>
       <a href="#contact" class="btn-ghost">Get Free Quote</a>
     </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
     <div class="hero-tabs">
       <button class="htab active">Web Design</button>
       <button class="htab">App Design</button>
@@ -74,7 +391,10 @@
       <button class="htab">Wireframe</button>
       <button class="htab">Branding</button>
     </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
     <div class="hero-stats">
       <div class="hstat">
         <div class="hstat-n">150+</div>
@@ -95,6 +415,7 @@
     </div>
   </div>
 
+<<<<<<< HEAD
   <!-- RIGHT — photo card -->
   <div class="hero-right">
     <div class="hero-photo-wrap">
@@ -131,10 +452,43 @@
         <div>
           <div class="hf-val">ONLINE NOW</div>
           <div class="hf-lbl">Quick Response</div>
+=======
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-blob"></div>
+      <div class="hero-photo-card">
+        <div class="corner tl"></div><div class="corner tr"></div>
+        <div class="corner bl"></div><div class="corner br"></div>
+        <div class="hero-photo-inner">
+          <div class="hero-avatar">👨‍💻</div>
+        </div>
+      </div>
+
+      <!-- Floating info cards -->
+      <div class="hf-card glass hf-1">
+        <div class="hf-icon">⚡</div>
+        <div>
+          <div class="hf-value">Fast Delivery</div>
+          <div class="hf-label">Avg. 3 Days</div>
+        </div>
+      </div>
+      <div class="hf-card glass hf-2">
+        <div class="hf-icon">🏆</div>
+        <div>
+          <div class="hf-value">Top Rated</div>
+          <div class="hf-label">Fiverr Seller</div>
+        </div>
+      </div>
+      <div class="hf-card glass hf-3">
+        <div>
+          <div class="hf-value" style="font-size:.7rem">● ONLINE NOW</div>
+          <div class="hf-label">Quick Response</div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
         </div>
       </div>
     </div>
   </div>
+<<<<<<< HEAD
 
 </section>
 
@@ -146,6 +500,15 @@
   <div class="container">
     <div class="tools-inner reveal">
       <span class="tools-lbl">Tools I Master</span>
+=======
+</section>
+
+<!-- ═══ TOOLS STRIP ════════════════════════════════════════ -->
+<section id="tools">
+  <div class="container">
+    <div class="glass tools-inner reveal">
+      <div class="tools-label">Tools I Master</div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
       <div class="tools-row">
         <div class="tool-chip"><span class="tool-chip-ico">🎨</span><span class="tool-chip-name">Figma</span></div>
         <div class="tool-chip"><span class="tool-chip-ico">⚛️</span><span class="tool-chip-name">React</span></div>
@@ -160,6 +523,7 @@
   </div>
 </section>
 
+<<<<<<< HEAD
 
 <!-- ══════════════════════════════════════════════════════════
      SERVICES
@@ -237,10 +601,70 @@
         <a href="#contact" class="srv-link">Order Now →</a>
       </div>
 
+=======
+<!-- ═══ SERVICES ══════════════════════════════════════════= -->
+<section id="services">
+  <div class="sec-ghost" style="position:absolute;top:-10px;right:-20px">SERVICES</div>
+  <div class="container">
+    <div class="reveal" style="margin-bottom:56px">
+      <div class="sec-eye">What I Do</div>
+      <div class="glass-pill" style="margin-bottom:18px"><span style="font-family:Orbitron,monospace;font-size:.85rem;font-weight:900;letter-spacing:1px;color:#fff">Services I <span style="color:var(--g)">Provide</span></span></div>
+    </div>
+    <div class="services-grid">
+      <div class="srv-card glass reveal" style="transition-delay:.05s">
+        <div class="srv-num">01</div>
+        <span class="srv-icon">⚡</span>
+        <div class="srv-title">Web Development</div>
+        <div class="srv-desc">Blazing-fast, production-ready websites and web apps. Clean code, responsive layouts, performance-first approach.</div>
+        <div class="srv-tags"><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">TypeScript</span></div>
+        <a href="#contact" class="srv-more-link">Order Now →</a>
+      </div>
+      <div class="srv-card glass reveal" style="transition-delay:.1s">
+        <div class="srv-num">02</div>
+        <span class="srv-icon">🎨</span>
+        <div class="srv-title">UI/UX Design</div>
+        <div class="srv-desc">Interfaces that feel inevitable. Figma prototypes, design systems, and user journeys optimized to convert.</div>
+        <div class="srv-tags"><span class="chip">Figma</span><span class="chip">Prototyping</span><span class="chip">CRO</span></div>
+        <a href="#contact" class="srv-more-link">Order Now →</a>
+      </div>
+      <div class="srv-card glass reveal" style="transition-delay:.15s">
+        <div class="srv-num">03</div>
+        <span class="srv-icon">🔧</span>
+        <div class="srv-title">Backend & APIs</div>
+        <div class="srv-desc">Scalable server infrastructure, REST & GraphQL APIs, databases, and cloud deployments that never break under load.</div>
+        <div class="srv-tags"><span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span class="chip">AWS</span></div>
+        <a href="#contact" class="srv-more-link">Order Now →</a>
+      </div>
+      <div class="srv-card glass reveal" style="transition-delay:.2s">
+        <div class="srv-num">04</div>
+        <span class="srv-icon">🤖</span>
+        <div class="srv-title">AI Integration</div>
+        <div class="srv-desc">Embed intelligent features into your product — chatbots, content engines, workflow automation, and smart analytics.</div>
+        <div class="srv-tags"><span class="chip">OpenAI</span><span class="chip">LangChain</span><span class="chip">Agents</span></div>
+        <a href="#contact" class="srv-more-link">Order Now →</a>
+      </div>
+      <div class="srv-card glass reveal" style="transition-delay:.25s">
+        <div class="srv-num">05</div>
+        <span class="srv-icon">🛒</span>
+        <div class="srv-title">E-Commerce</div>
+        <div class="srv-desc">Revenue-driven online stores on Shopify, WooCommerce, or fully custom. Every pixel engineered for conversion.</div>
+        <div class="srv-tags"><span class="chip">Shopify</span><span class="chip">WooCommerce</span><span class="chip">Stripe</span></div>
+        <a href="#contact" class="srv-more-link">Order Now →</a>
+      </div>
+      <div class="srv-card glass reveal" style="transition-delay:.3s">
+        <div class="srv-num">06</div>
+        <span class="srv-icon">📱</span>
+        <div class="srv-title">Mobile Apps</div>
+        <div class="srv-desc">Cross-platform apps that feel genuinely native. Ship to iOS and Android simultaneously without any compromise on quality.</div>
+        <div class="srv-tags"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Firebase</span></div>
+        <a href="#contact" class="srv-more-link">Order Now →</a>
+      </div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
     </div>
   </div>
 </section>
 
+<<<<<<< HEAD
 
 <!-- ══════════════════════════════════════════════════════════
      PORTFOLIO
@@ -264,6 +688,19 @@
       <a href="#contact" class="btn-ghost">View All →</a>
     </div>
 
+=======
+<!-- ═══ PORTFOLIO ══════════════════════════════════════════ -->
+<section id="portfolio">
+  <div class="sec-ghost port-ghost">PORTFOLIO</div>
+  <div class="container">
+    <div class="reveal" style="margin-bottom:40px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px">
+      <div>
+        <div class="sec-eye">Selected Work</div>
+        <div class="glass-pill"><span style="font-family:Orbitron,monospace;font-size:.85rem;font-weight:900;letter-spacing:1px;color:#fff">Have a Look at My <span style="color:var(--g)">Portfolio</span></span></div>
+      </div>
+      <a href="#contact" class="btn-ghost" style="align-self:flex-end">View All →</a>
+    </div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
     <div class="port-filter reveal">
       <button class="pf-btn active">All Projects</button>
       <button class="pf-btn">Web App</button>
@@ -271,6 +708,7 @@
       <button class="pf-btn">Mobile</button>
       <button class="pf-btn">Landing Page</button>
     </div>
+<<<<<<< HEAD
 
     <div class="port-grid reveal">
 
@@ -286,6 +724,21 @@
             │  [████] [████] [███]  │<br>
             │  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒    │<br>
             └────────────────────────┘
+=======
+    <div class="port-grid reveal">
+      <div class="pcard pc1">
+        <div class="pcard-bg" style="background:linear-gradient(140deg,#001a08 0%,#002d10 100%)"></div>
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(5,245,96,.06) 1px,transparent 1px);background-size:22px 22px"></div>
+        <div class="pcard-content">
+          <span class="pcard-tag">Web App</span>
+          <div class="pcard-mock">
+            ┌─────────────────────────┐<br>
+            │  ▓▓▓  SaaS Dashboard    │<br>
+            │  ░░░░░░░░░░░░░░░░░░░   │<br>
+            │  [████] [███] [████]   │<br>
+            │  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   │<br>
+            └─────────────────────────┘
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
           </div>
           <div class="pcard-bottom">
             <div class="pcard-title">Analytics SaaS Dashboard</div>
@@ -293,6 +746,7 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
 
       <div class="pcard pc2">
         <div class="pcard-bg" style="background:linear-gradient(140deg,#001208,#002410)"></div>
@@ -319,12 +773,39 @@
         <div class="pcard-content">
           <span class="pcard-tag">Mobile</span>
           <div class="pcard-mock">[ Fintech App ]</div>
+=======
+      <div class="pcard pc2">
+        <div class="pcard-bg" style="background:linear-gradient(140deg,#001206 0%,#002710 100%)"></div>
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(5,245,96,.06) 1px,transparent 1px);background-size:22px 22px"></div>
+        <div class="pcard-content">
+          <span class="pcard-tag">E-Commerce</span>
+          <div class="pcard-mock" style="font-size:.55rem">
+            ┌──────────┐<br>
+            │ STORE    │<br>
+            │ ██████   │<br>
+            │ [BUY NOW]│<br>
+            └──────────┘
+          </div>
+          <div class="pcard-bottom">
+            <div class="pcard-title">Luxury E-Commerce Store</div>
+            <div class="pcard-sub">Shopify · CRO Optimized</div>
+          </div>
+        </div>
+      </div>
+      <div class="pcard pc3">
+        <div class="pcard-bg" style="background:linear-gradient(140deg,#000e04 0%,#001f0a 100%)"></div>
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(5,245,96,.06) 1px,transparent 1px);background-size:22px 22px"></div>
+        <div class="pcard-content">
+          <span class="pcard-tag">Mobile</span>
+          <div class="pcard-mock" style="font-size:.55rem">📱 Fintech App</div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
           <div class="pcard-bottom">
             <div class="pcard-title">Fintech Mobile App</div>
             <div class="pcard-sub">React Native · Expo</div>
           </div>
         </div>
       </div>
+<<<<<<< HEAD
 
       <div class="pcard pc4">
         <div class="pcard-bg" style="background:linear-gradient(140deg,#000d04,#001a08)"></div>
@@ -334,10 +815,21 @@
           <div class="pcard-mock">[ AI Support Bot ]</div>
           <div class="pcard-bottom">
             <div class="pcard-title">AI Customer Support</div>
+=======
+      <div class="pcard pc4">
+        <div class="pcard-bg" style="background:linear-gradient(140deg,#000d04 0%,#001a08 100%)"></div>
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(5,245,96,.06) 1px,transparent 1px);background-size:22px 22px"></div>
+        <div class="pcard-content">
+          <span class="pcard-tag">AI Product</span>
+          <div class="pcard-mock" style="font-size:.55rem">🤖 AI Chatbot</div>
+          <div class="pcard-bottom">
+            <div class="pcard-title">AI Support System</div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
             <div class="pcard-sub">OpenAI · Node.js</div>
           </div>
         </div>
       </div>
+<<<<<<< HEAD
 
       <div class="pcard pc5">
         <div class="pcard-bg" style="background:linear-gradient(140deg,#000a03,#001506)"></div>
@@ -345,17 +837,29 @@
         <div class="pcard-content">
           <span class="pcard-tag">Landing Page</span>
           <div class="pcard-mock">[ SaaS Landing ]</div>
+=======
+      <div class="pcard pc5">
+        <div class="pcard-bg" style="background:linear-gradient(140deg,#000a03 0%,#001506 100%)"></div>
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(5,245,96,.06) 1px,transparent 1px);background-size:22px 22px"></div>
+        <div class="pcard-content">
+          <span class="pcard-tag">Landing Page</span>
+          <div class="pcard-mock" style="font-size:.55rem">🌐 SaaS Page</div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
           <div class="pcard-bottom">
             <div class="pcard-title">SaaS Landing Page</div>
             <div class="pcard-sub">Next.js · Framer</div>
           </div>
         </div>
       </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
     </div>
   </div>
 </section>
 
+<<<<<<< HEAD
 
 <!-- ══════════════════════════════════════════════════════════
      ABOUT
@@ -420,10 +924,56 @@
         </div>
       </div>
 
+=======
+<!-- ═══ ABOUT ═══════════════════════════════════════════════ -->
+<section id="about">
+  <div class="sec-ghost about-ghost">ABOUT ME</div>
+  <div class="about-img-wrap reveal-l" style="padding:0 5% 0 max(5%,calc((100vw - 1200px)/2))">
+    <div class="about-photo">
+      <div class="corner tl"></div><div class="corner tr"></div>
+      <div class="corner bl"></div><div class="corner br"></div>
+      <div class="about-photo-inner">
+        <div class="about-avatar2">👨‍💻</div>
+      </div>
+    </div>
+    <div class="about-exp-badge glass">
+      <div class="badge-big">5+</div>
+      <div class="badge-small">Years of<br>Experience</div>
+    </div>
+  </div>
+
+  <div class="about-right reveal-r" style="padding-right:max(5%,calc((100vw - 1200px)/2))">
+    <div class="sec-eye">About Me</div>
+    <div class="glass-pill" style="margin-bottom:26px"><span style="font-family:Orbitron,monospace;font-size:.85rem;font-weight:900;letter-spacing:1px;color:#fff">Who is <span style="color:var(--g)">Alex Mercer?</span></span></div>
+    <p class="about-body">I'm a full-stack developer and UI designer who's spent 5+ years turning ambitious ideas into products that actually perform. I've delivered for clients in 40+ countries — from early-stage startups to established brands.</p>
+    <p class="about-body">My obsession: that sweet spot where engineering precision meets design that makes people stop scrolling. Every project is a chance to build something that genuinely moves the needle.</p>
+    <div class="skills-block">
+      <div class="skill-line">
+        <div class="skill-meta"><span class="skill-nm">Frontend Development</span><span class="skill-pc">97%</span></div>
+        <div class="skill-track"><div class="skill-bar" data-w="97"></div></div>
+      </div>
+      <div class="skill-line">
+        <div class="skill-meta"><span class="skill-nm">UI / UX Design</span><span class="skill-pc">92%</span></div>
+        <div class="skill-track"><div class="skill-bar" data-w="92"></div></div>
+      </div>
+      <div class="skill-line">
+        <div class="skill-meta"><span class="skill-nm">Backend & APIs</span><span class="skill-pc">88%</span></div>
+        <div class="skill-track"><div class="skill-bar" data-w="88"></div></div>
+      </div>
+      <div class="skill-line">
+        <div class="skill-meta"><span class="skill-nm">Mobile Development</span><span class="skill-pc">84%</span></div>
+        <div class="skill-track"><div class="skill-bar" data-w="84"></div></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap">
+      <a href="#contact" class="btn-fill">Let's Work Together →</a>
+      <a href="#portfolio" class="btn-ghost">See My Work</a>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
     </div>
   </div>
 </section>
 
+<<<<<<< HEAD
 
 <!-- ══════════════════════════════════════════════════════════
      PROCESS
@@ -441,35 +991,65 @@
       </div>
     </div>
 
+=======
+<!-- ═══ PROCESS ════════════════════════════════════════════= -->
+<section id="process">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:56px;text-align:center">
+      <div class="sec-eye" style="text-align:center">How I Work</div>
+      <div class="glass-pill"><span style="font-family:Orbitron,monospace;font-size:.85rem;font-weight:900;letter-spacing:1px;color:#fff">My <span style="color:var(--g)">Process</span></span></div>
+    </div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
     <div class="process-grid reveal">
       <div class="proc-step">
         <div class="proc-n">01</div>
         <div class="proc-title">Discovery</div>
+<<<<<<< HEAD
         <div class="proc-body">We align on goals, audience, and what success looks like before a single tool is touched.</div>
         <div class="proc-arr">→</div>
+=======
+        <div class="proc-body">We align on your goals, users, and what success looks like before touching any tools.</div>
+        <div class="proc-arrow">→</div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
       </div>
       <div class="proc-step">
         <div class="proc-n">02</div>
         <div class="proc-title">Strategy</div>
+<<<<<<< HEAD
         <div class="proc-body">Clear scope, tech stack, and timeline. No scope creep, no surprises at invoice time.</div>
         <div class="proc-arr">→</div>
+=======
+        <div class="proc-body">Clear scope, tech choices, and timeline. No scope creep. No surprises at invoice time.</div>
+        <div class="proc-arrow">→</div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
       </div>
       <div class="proc-step">
         <div class="proc-n">03</div>
         <div class="proc-title">Build</div>
+<<<<<<< HEAD
         <div class="proc-body">Iterative development with regular check-ins. You see real progress every step of the way.</div>
         <div class="proc-arr">→</div>
+=======
+        <div class="proc-body">Iterative development with regular check-ins. You see progress every step of the way.</div>
+        <div class="proc-arrow">→</div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
       </div>
       <div class="proc-step">
         <div class="proc-n">04</div>
         <div class="proc-title">Launch</div>
+<<<<<<< HEAD
         <div class="proc-body">Thorough QA, smooth deployment, full handover docs. I stay reachable long after launch.</div>
         <div class="proc-arr">✓</div>
+=======
+        <div class="proc-body">Thorough QA, smooth deployment, and complete handover docs. I stay reachable post-launch.</div>
+        <div class="proc-arrow">✓</div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
       </div>
     </div>
   </div>
 </section>
 
+<<<<<<< HEAD
 
 <!-- ══════════════════════════════════════════════════════════
      TESTIMONIALS
@@ -494,36 +1074,68 @@
         <div class="tc-stars">★★★★★</div>
         <div class="tc-q">"</div>
         <div class="tc-text">Absolutely exceptional work. Built a complex SaaS dashboard in under a week — pixel-perfect and fully functional. Genuinely my best Fiverr hire, and I've placed hundreds of orders.</div>
+=======
+<!-- ═══ TESTIMONIALS ═══════════════════════════════════════= -->
+<section id="testimonials">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:56px">
+      <div class="sec-eye">Client Reviews</div>
+      <div class="glass-pill"><span style="font-family:Orbitron,monospace;font-size:.85rem;font-weight:900;letter-spacing:1px;color:#fff">What Clients <span style="color:var(--g)">Say</span></span></div>
+    </div>
+    <div class="testi-grid">
+      <div class="tcard glass reveal" style="transition-delay:.05s">
+        <div class="tc-stars">★★★★★</div>
+        <div class="tc-q">"</div>
+        <div class="tc-text">Absolutely exceptional work. Built a complex SaaS dashboard in under a week — pixel-perfect and fully functional. Genuinely my best Fiverr hire ever, and I've placed hundreds of orders.</div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
         <div class="tc-author">
           <div class="tc-ava">🇺🇸</div>
           <div><div class="tc-name">Marcus T.</div><div class="tc-loc">United States · Verified Buyer</div></div>
         </div>
       </div>
+<<<<<<< HEAD
 
       <div class="tcard reveal" data-delay=".1">
         <div class="tc-stars">★★★★★</div>
         <div class="tc-q">"</div>
         <div class="tc-text">Communication was flawless, code quality outstanding. Revisions handled instantly without complaint. Will hire for every future project and recommend without hesitation.</div>
+=======
+      <div class="tcard glass reveal" style="transition-delay:.1s">
+        <div class="tc-stars">★★★★★</div>
+        <div class="tc-q">"</div>
+        <div class="tc-text">Communication was flawless, code quality outstanding. Revisions handled instantly without complaint. Will hire for every future project and recommend to everyone without hesitation.</div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
         <div class="tc-author">
           <div class="tc-ava">🇬🇧</div>
           <div><div class="tc-name">Sarah K.</div><div class="tc-loc">United Kingdom · Verified Buyer</div></div>
         </div>
       </div>
+<<<<<<< HEAD
 
       <div class="tcard reveal" data-delay=".15">
         <div class="tc-stars">★★★★★</div>
         <div class="tc-q">"</div>
         <div class="tc-text">The store he built tripled our conversion rate in the first month. Extraordinary ROI. Operates on a completely different level from everyone else on this platform.</div>
+=======
+      <div class="tcard glass reveal" style="transition-delay:.15s">
+        <div class="tc-stars">★★★★★</div>
+        <div class="tc-q">"</div>
+        <div class="tc-text">The store he built tripled our conversion rate in the first month. Extraordinary ROI. This seller operates on a completely different level from everyone else on this platform.</div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
         <div class="tc-author">
           <div class="tc-ava">🇩🇪</div>
           <div><div class="tc-name">Lukas W.</div><div class="tc-loc">Germany · Verified Buyer</div></div>
         </div>
       </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
     </div>
   </div>
 </section>
 
+<<<<<<< HEAD
 
 <!-- ══════════════════════════════════════════════════════════
      CONTACT
@@ -590,14 +1202,57 @@
         <button class="cf-submit" id="submitBtn">Send Message →</button>
       </div>
 
+=======
+<!-- ═══ CONTACT ════════════════════════════════════════════= -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:48px;text-align:center">
+      <div class="sec-eye" style="text-align:center">Let's Build Together</div>
+      <div class="glass-pill"><span style="font-family:Orbitron,monospace;font-size:.85rem;font-weight:900;letter-spacing:1px;color:#fff">Start Your <span style="color:var(--g)">Project</span></span></div>
+    </div>
+    <div class="contact-shell glass reveal">
+      <div>
+        <div class="ci-eyebrow">// Get In Touch</div>
+        <div class="ci-headline">Ready to build something <span class="hl">exceptional?</span></div>
+        <p class="ci-body">Drop me a message or reach out directly. I respond within 1 hour during business hours — because your time is valuable.</p>
+        <div class="ci-links">
+          <a href="#" class="ci-link"><div class="ci-link-ico">📧</div><span class="ci-link-text">hello@alexmercer.dev</span></a>
+          <a href="#" class="ci-link"><div class="ci-link-ico">💬</div><span class="ci-link-text">Fiverr: @alex_mercer_dev</span></a>
+          <a href="#" class="ci-link"><div class="ci-link-ico">🕐</div><span class="ci-link-text">Response Time: Under 1 Hour</span></a>
+          <a href="#" class="ci-link"><div class="ci-link-ico">🌍</div><span class="ci-link-text">Available Worldwide · All Timezones</span></a>
+        </div>
+      </div>
+      <div class="cf">
+        <div class="cf-row">
+          <div><label class="cf-label">Your Name</label><input class="cf-input" type="text" placeholder="John Smith"></div>
+          <div><label class="cf-label">Your Email</label><input class="cf-input" type="email" placeholder="john@company.com"></div>
+        </div>
+        <div><label class="cf-label">Project Type</label><input class="cf-input" type="text" placeholder="e.g. Web App, Landing Page, Mobile App..."></div>
+        <div><label class="cf-label">Budget Range</label>
+          <select class="cf-input" style="appearance:none;cursor:pointer">
+            <option value="" disabled selected style="background:#111">Select your budget</option>
+            <option style="background:#111">$100 – $500</option>
+            <option style="background:#111">$500 – $1,500</option>
+            <option style="background:#111">$1,500 – $5,000</option>
+            <option style="background:#111">$5,000+</option>
+          </select>
+        </div>
+        <div><label class="cf-label">Tell Me About Your Project</label><textarea class="cf-textarea" placeholder="Describe your project, goals, timeline, and any specific requirements..."></textarea></div>
+        <button class="cf-submit" id="submitBtn">Send Message →</button>
+      </div>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
     </div>
   </div>
 </section>
 
+<<<<<<< HEAD
 
 <!-- ══════════════════════════════════════════════════════════
      FOOTER
 ══════════════════════════════════════════════════════════ -->
+=======
+<!-- ═══ FOOTER ═════════════════════════════════════════════= -->
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
 <footer>
   <div class="f-logo">MERCER</div>
   <div class="f-copy">© 2025 Alex Mercer. All rights reserved.</div>
@@ -609,6 +1264,79 @@
   </div>
 </footer>
 
+<<<<<<< HEAD
 <script src="script.js"></script>
+=======
+<script>
+/* cursor */
+const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cur.style.left=mx+'px';cur.style.top=my+'px';
+});
+(function raf(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;cur2.style.left=rx+'px';cur2.style.top=ry+'px';requestAnimationFrame(raf)})();
+
+/* scroll reveal */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      // trigger skill bars
+      e.target.querySelectorAll('.skill-bar').forEach(b=>{
+        b.style.width=b.dataset.w+'%';
+      });
+      // trigger stat border animation
+      e.target.querySelectorAll('.hstat').forEach(h=>h.classList.add('visible'));
+    }
+  });
+},{threshold:.12,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>io.observe(el));
+
+/* hero tabs */
+document.querySelectorAll('.htab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.htab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+  });
+});
+
+/* portfolio filter */
+document.querySelectorAll('.pf-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.pf-btn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+  });
+});
+
+/* parallax orbs */
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  document.querySelector('.orb-a').style.transform=`translateY(${y*.12}px)`;
+  document.querySelector('.orb-b').style.transform=`translateY(${-y*.08}px)`;
+});
+
+/* form */
+document.getElementById('submitBtn').addEventListener('click',function(){
+  this.textContent='✓ Sent! I\'ll reply within 1 hour';
+  this.style.background='linear-gradient(90deg,#00c847,#05f560)';
+  this.style.boxShadow='0 0 28px rgba(5,245,96,.4)';
+  setTimeout(()=>{
+    this.textContent='Send Message →';
+    this.style.background='';
+    this.style.boxShadow='';
+  },3500);
+});
+
+/* active nav */
+const secs=document.querySelectorAll('section[id]');
+const nls=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id});
+  nls.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'var(--g)':''});
+},{ passive: true });
+</script>
+>>>>>>> 3b5c008f53fde563569a375a4343c4fd5d78763b
 </body>
 </html>
