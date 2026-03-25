@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" fill="none">
+  <!-- Background glow -->
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="60%" r="55%">
+      <stop offset="0%" stop-color="#05f560" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#05f560" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="faceGrad" cx="45%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#c8a882"/>
+      <stop offset="100%" stop-color="#9a7450"/>
+    </radialGradient>
+    <radialGradient id="bodyGrad" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#1a2a1a"/>
+      <stop offset="100%" stop-color="#0a120a"/>
+    </radialGradient>
+    <radialGradient id="hairGrad" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#1a1008"/>
+      <stop offset="100%" stop-color="#080503"/>
+    </radialGradient>
+    <filter id="softShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="jacketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161e16"/>
+      <stop offset="100%" stop-color="#0b110b"/>
+    </linearGradient>
+    <linearGradient id="neonLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#05f560" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#05f560"/>
+      <stop offset="100%" stop-color="#05f560" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="avatarClip">
+      <rect width="400" height="520" rx="24"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#avatarClip)">
+    <!-- BG -->
+    <rect width="400" height="520" fill="#080f08"/>
+    <!-- Grid lines -->
+    <line x1="0" y1="0" x2="400" y2="520" stroke="rgba(5,245,96,0.04)" stroke-width="1"/>
+    <line x1="400" y1="0" x2="0" y2="520" stroke="rgba(5,245,96,0.04)" stroke-width="1"/>
+    <line x1="0" y1="260" x2="400" y2="260" stroke="rgba(5,245,96,0.04)" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="520" stroke="rgba(5,245,96,0.04)" stroke-width="1"/>
+
+    <!-- Background glow -->
+    <ellipse cx="200" cy="350" rx="220" ry="200" fill="url(#bgGlow)"/>
+    <!-- Secondary glow top -->
+    <ellipse cx="200" cy="120" rx="130" ry="100" fill="rgba(5,245,96,0.06)"/>
+
+    <!-- ── BODY / JACKET ── -->
+    <!-- Shoulder base -->
+    <path d="M60 520 Q60 360 90 320 Q130 290 200 285 Q270 290 310 320 Q340 360 340 520Z" fill="url(#jacketGrad)" filter="url(#softShadow)"/>
+
+    <!-- Left arm -->
+    <path d="M60 520 L60 380 Q70 340 100 320 Q118 310 130 318 L150 340 Q120 365 110 400 L100 520Z" fill="#111811"/>
+    <!-- Right arm -->
+    <path d="M340 520 L340 380 Q330 340 300 320 Q282 310 270 318 L250 340 Q280 365 290 400 L300 520Z" fill="#111811"/>
+
+    <!-- Jacket lapel left -->
+    <path d="M165 295 L140 380 L175 385 L195 310Z" fill="#0d150d" stroke="rgba(5,245,96,0.1)" stroke-width="0.5"/>
+    <!-- Jacket lapel right -->
+    <path d="M235 295 L260 380 L225 385 L205 310Z" fill="#0d150d" stroke="rgba(5,245,96,0.1)" stroke-width="0.5"/>
+
+    <!-- Shirt/collar inner -->
+    <path d="M175 295 L200 340 L225 295 Q212 285 200 285 Q188 285 175 295Z" fill="#1a221a"/>
+
+    <!-- Neon trim on jacket collar -->
+    <path d="M165 295 Q175 285 200 283 Q225 285 235 295" stroke="#05f560" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+    <!-- Neon accent lines on sleeves -->
+    <line x1="75" y1="370" x2="115" y2="355" stroke="rgba(5,245,96,0.3)" stroke-width="1"/>
+    <line x1="78" y1="380" x2="113" y2="367" stroke="rgba(5,245,96,0.15)" stroke-width="0.8"/>
+    <line x1="325" y1="370" x2="285" y2="355" stroke="rgba(5,245,96,0.3)" stroke-width="1"/>
+    <line x1="322" y1="380" x2="287" y2="367" stroke="rgba(5,245,96,0.15)" stroke-width="0.8"/>
+
+    <!-- ── NECK ── -->
+    <path d="M182 245 Q182 278 190 285 L200 288 L210 285 Q218 278 218 245Z" fill="#b89068"/>
+
+    <!-- ── HEAD ── -->
+    <!-- Head shape -->
+    <ellipse cx="200" cy="185" rx="78" ry="90" fill="url(#faceGrad)" filter="url(#softShadow)"/>
+
+    <!-- Hair - top/crown -->
+    <path d="M130 175 Q128 115 165 90 Q185 78 200 76 Q215 78 235 90 Q272 115 270 175 Q255 130 230 118 Q215 112 200 112 Q185 112 170 118 Q145 130 130 175Z" fill="url(#hairGrad)"/>
+
+    <!-- Hair side left -->
+    <path d="M130 175 Q122 155 125 135 Q132 108 148 95 Q158 88 165 90 Q148 105 143 128 Q138 150 138 175Z" fill="#0d0804"/>
+    <!-- Hair side right -->
+    <path d="M270 175 Q278 155 275 135 Q268 108 252 95 Q242 88 235 90 Q252 105 257 128 Q262 150 262 175Z" fill="#0d0804"/>
+
+    <!-- Ear left -->
+    <ellipse cx="124" cy="192" rx="10" ry="14" fill="#a87848"/>
+    <path d="M127 183 Q132 192 127 201" stroke="#8a6035" stroke-width="1.5" fill="none"/>
+    <!-- Ear right -->
+    <ellipse cx="276" cy="192" rx="10" ry="14" fill="#a87848"/>
+    <path d="M273 183 Q268 192 273 201" stroke="#8a6035" stroke-width="1.5" fill="none"/>
+
+    <!-- Eyebrows -->
+    <path d="M162 158 Q175 152 188 155" stroke="#3a2010" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M212 155 Q225 152 238 158" stroke="#3a2010" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Eyes -->
+    <!-- Left eye -->
+    <ellipse cx="176" cy="174" rx="13" ry="11" fill="#fff"/>
+    <ellipse cx="177" cy="175" rx="8" ry="8" fill="#1a0e00"/>
+    <ellipse cx="178" cy="175" rx="5" ry="5" fill="#2a1800"/>
+    <circle cx="180" cy="172" r="2.5" fill="#fff" opacity="0.9"/>
+    <path d="M163 168 Q176 162 189 168" stroke="#3a2010" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Right eye -->
+    <ellipse cx="224" cy="174" rx="13" ry="11" fill="#fff"/>
+    <ellipse cx="223" cy="175" rx="8" ry="8" fill="#1a0e00"/>
+    <ellipse cx="223" cy="175" rx="5" ry="5" fill="#2a1800"/>
+    <circle cx="225" cy="172" r="2.5" fill="#fff" opacity="0.9"/>
+    <path d="M211 168 Q224 162 237 168" stroke="#3a2010" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Eye glint - neon reflection -->
+    <circle cx="182" cy="172" r="1.2" fill="#05f560" opacity="0.7"/>
+    <circle cx="228" cy="172" r="1.2" fill="#05f560" opacity="0.7"/>
+
+    <!-- Nose -->
+    <path d="M196 185 Q192 202 194 208 Q200 212 206 208 Q208 202 204 185" fill="#a07045" opacity="0.5"/>
+    <ellipse cx="194" cy="208" rx="4" ry="3" fill="#8a6035" opacity="0.4"/>
+    <ellipse cx="206" cy="208" rx="4" ry="3" fill="#8a6035" opacity="0.4"/>
+
+    <!-- Mouth - slight confident smile -->
+    <path d="M183 224 Q200 234 217 224" stroke="#7a4828" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M185 224 Q200 218 215 224" fill="#c87858" opacity="0.6"/>
+
+    <!-- Face highlight -->
+    <ellipse cx="185" cy="168" rx="8" ry="12" fill="white" opacity="0.06"/>
+
+    <!-- ── ACCESSORIES ── -->
+    <!-- Small earring left -->
+    <circle cx="120" cy="198" r="3" fill="#05f560" opacity="0.8" filter="url(#glow)"/>
+    <!-- Subtle neon headband/visor line -->
+    <path d="M140 148 Q200 138 260 148" stroke="rgba(5,245,96,0.25)" stroke-width="1.5" fill="none"/>
+
+    <!-- ── NEON ELEMENTS AROUND ── -->
+    <!-- Code bracket left -->
+    <text x="22" y="200" font-family="monospace" font-size="48" fill="rgba(5,245,96,0.12)" font-weight="bold">{</text>
+    <!-- Code bracket right -->
+    <text x="345" y="200" font-family="monospace" font-size="48" fill="rgba(5,245,96,0.12)" font-weight="bold">}</text>
+
+    <!-- Floating code snippets -->
+    <text x="18" y="90" font-family="monospace" font-size="9" fill="rgba(5,245,96,0.25)">const dev = {</text>
+    <text x="18" y="104" font-family="monospace" font-size="9" fill="rgba(5,245,96,0.18)">  name: "Alex",</text>
+    <text x="18" y="118" font-family="monospace" font-size="9" fill="rgba(5,245,96,0.18)">  rating: 5.0</text>
+    <text x="18" y="132" font-family="monospace" font-size="9" fill="rgba(5,245,96,0.25)">}</text>
+
+    <text x="265" y="90" font-family="monospace" font-size="9" fill="rgba(5,245,96,0.25)">// ONLINE</text>
+    <text x="272" y="104" font-family="monospace" font-size="9" fill="rgba(5,245,96,0.18)">150+ projects</text>
+    <text x="272" y="118" font-family="monospace" font-size="9" fill="rgba(5,245,96,0.18)">98% satisfied</text>
+
+    <!-- Bottom neon line -->
+    <rect x="0" y="516" width="400" height="4" fill="url(#neonLine)"/>
+
+    <!-- Corner accents -->
+    <path d="M0 0 L30 0 L30 3 L3 3 L3 30 L0 30Z" fill="#05f560" opacity="0.5"/>
+    <path d="M400 0 L370 0 L370 3 L397 3 L397 30 L400 30Z" fill="#05f560" opacity="0.5"/>
+    <path d="M0 520 L30 520 L30 517 L3 517 L3 490 L0 490Z" fill="#05f560" opacity="0.5"/>
+    <path d="M400 520 L370 520 L370 517 L397 517 L397 490 L400 490Z" fill="#05f560" opacity="0.5"/>
+
+    <!-- Status indicator -->
+    <circle cx="340" cy="32" r="6" fill="#05f560" opacity="0.9" filter="url(#glow)"/>
+    <text x="350" y="36" font-family="monospace" font-size="9" fill="rgba(5,245,96,0.7)">ONLINE</text>
+  </g>
+</svg>
